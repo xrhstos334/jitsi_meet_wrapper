@@ -58,9 +58,13 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // From: https://github.com/jitsi/jitsi-maven-repository/tree/master/releases/org/jitsi/react/jitsi-meet-sdk
     // Changelog: https://github.com/jitsi/jitsi-meet-release-notes/blob/master/CHANGELOG-MOBILE-SDKS.md
+//    implementation ('org.jitsi.react:jitsi-meet-sdk:8.1.2') {
+//        exclude group: 'com.facebook.react',module:'react-native-svg'
+//        exclude group: 'com.facebook',module:'hermes'
+//        exclude group: 'com.facebook.react',module:'react-native-community-async-storage'
+//        transitive = true }
     implementation ('org.jitsi.react:jitsi-meet-sdk:8.1.2') {
-        exclude group: 'com.facebook.react',module:'react-native-svg'
-        exclude group: 'com.facebook',module:'hermes'
-        exclude group: 'com.facebook.react',module:'react-native-community-async-storage'
+        exclude group: 'com.facebook.react',module:'bridge'
         transitive = true }
+
 }
