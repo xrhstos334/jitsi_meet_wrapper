@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="dev.saibotma.jitsi_meet_wrapper">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
     <application>
         <!-- launchMode="singleTask" is required, because the Jitsi Activity should launch in a new task so that the flutter activity is still usable; See also https://developer.android.com/develop/ui/views/picture-in-picture#single_playback -->
         <!-- autoRemoveFromRecents="true" is required, because otherwise the new task of the JitsiMeetWrapperActivity will not close on hang up -->

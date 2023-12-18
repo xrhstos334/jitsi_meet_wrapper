@@ -23,10 +23,10 @@ class Meeting extends StatefulWidget {
 }
 
 class _MeetingState extends State<Meeting> {
-  final serverText = TextEditingController();
-  final roomText = TextEditingController(text: "jitsi-meet-wrapper-test-room");
+  final serverText = TextEditingController(text: "https://8x8.vc/");
+  final roomText = TextEditingController(text: "vpaas-magic-cookie-680d9fe42572402a8d169d01e208fb2d/bDCFaOtV4V5Tb18m");
   final subjectText = TextEditingController(text: "My Plugin Test Meeting");
-  final tokenText = TextEditingController();
+  final tokenText = TextEditingController(text: "eyJhbGciOiJSUzI1NiIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS02ODBkOWZlNDI1NzI0MDJhOGQxNjlkMDFlMjA4ZmIyZC83MTE0MWQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJjaGF0IiwiYXVkIjoiaml0c2kiLCJleHAiOjE3MDI5MDY1NjAsIm5iZiI6MTcwMjczMzc2MCwicm9vbSI6IioiLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtNjgwZDlmZTQyNTcyNDAyYThkMTY5ZDAxZTIwOGZiMmQiLCJjb250ZXh0Ijp7InVzZXIiOnsibW9kZXJhdG9yIjpmYWxzZSwiZW1haWwiOiJ4cmlzdG9zbXBvdUBob3RtYWlsLmNvbSIsIm5hbWUiOiJQYXRpZW50IERlbW8gQWxleGlzIiwiaWQiOiI1In0sImZlYXR1cmVzIjp7InJlY29yZGluZyI6ZmFsc2UsImxpdmVzdHJlYW1pbmciOmZhbHNlLCJ0cmFuc2NyaXB0aW9uIjpmYWxzZSwib3V0Ym91bmQtY2FsbCI6ZmFsc2V9fX0.Bn8K_WPDg-ec8lSQPXupsOzQYdebw6L-48WiJ2cEdScb8vSpPYX_cMxZ2g5XyEBWMfXPHvb4nDONH11fTWbJ8Dr2umTSrrgvuLDpGun-KvYkV65U4stZYzDHIoycdHd77UbxB4kKO9KiwX9NpNW6jjG4QAknJGR-nSiQxcisbm33kSgIqO4063T0M-7oTOlKlw3_QeQ3NwSwNDSSCd_UeHrMmkK_MUY8OqTluWvT_rs7l-L0sh2__nuqHghq5eFYO8JSVTPeWJXRyzqRR9izHo81kj02mgMYcwjfAeAMBn4c_-reEGoYxzqtbgFdfi7SEBMB3HzYLRKzwJgDCTK33Q");
   final userDisplayNameText = TextEditingController(text: "Plugin Test User");
   final userEmailText = TextEditingController(text: "fake@email.com");
   final userAvatarUrlText = TextEditingController();

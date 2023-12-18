@@ -1,11 +1,15 @@
 package dev.saibotma.jitsi_meet_wrapper
 
+import android.Manifest
 import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import org.jitsi.meet.sdk.BroadcastEvent
 import org.jitsi.meet.sdk.JitsiMeetActivity
@@ -35,6 +39,15 @@ class JitsiMeetWrapperActivity : JitsiMeetActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.FOREGROUND_SERVICE) != PackageManager.PERMISSION_GRANTED
+       ) {
+            // Request the permissions
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.FOREGROUND_SERVICE),
+                10)
+        }
+
+
         registerForBroadcastMessages()
         eventStreamHandler.onOpened()
     }
@@ -73,5 +86,21 @@ class JitsiMeetWrapperActivity : JitsiMeetActivity() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(this.broadcastReceiver)
         eventStreamHandler.onClosed()
         super.onDestroy()
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            10 -> {
+                // Check if all required permissions are granted
+                if (grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
+                    // Permissions granted, proceed with starting the foreground service
+                } else {
+                    // Permissions denied, handle accordingly (e.g., inform the user or disable features)
+                }
+            }
+            // Handle other cases if you have multiple permissions to request
+        }
     }
 }
